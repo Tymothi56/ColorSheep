@@ -26,9 +26,9 @@ public class GameCmd extends GameCommand implements CommandExecutor {
 		if(!(sender instanceof Player)) return true;
 		Player p = (Player) sender;
 		ColorPlayer cp = super.getColorPlayer(p.getUniqueId());
-		PlayerInfo pi = new PlayerInfo(p);
+//		PlayerInfo pi = new PlayerInfo(p.getUniqueId());
 		
-		if(pi.getRank() == RankList.ADMINISTRATEUR) {
+//		if(pi.getRank() == RankList.ADMINISTRATEUR) {
 			if(args.length == 0) {
 				cp.sendMessage("§cUsage: /game <start>");
 			}else{
@@ -40,10 +40,10 @@ public class GameCmd extends GameCommand implements CommandExecutor {
 					cp.sendMessage("§cUsage: /game <start>");
 				}
 			}
-		}else{
-			cp.sendSound(SoundUtils.ERROR);
-			cp.sendMessage("§c§oCommand invalide.");
-		}
+//		}else{
+//			cp.sendSound(SoundUtils.ERROR);
+//			cp.sendMessage("§c§oCommand invalide.");
+//		}
 		
 		return false;
 	}

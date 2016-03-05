@@ -15,7 +15,7 @@ public class TitleUtils {
 		IChatBaseComponent cbc2 = ChatSerializer.a("{\"text\": \""+subTitle+"\"}");
 		PacketPlayOutTitle packet1 = new PacketPlayOutTitle(EnumTitleAction.TIMES, null, 20, time, 20);
 		PacketPlayOutTitle packet2 = new PacketPlayOutTitle(EnumTitleAction.TITLE, cbc1);
-		PacketPlayOutTitle packet3 = new PacketPlayOutTitle(EnumTitleAction.TITLE, cbc2);
+		PacketPlayOutTitle packet3 = new PacketPlayOutTitle(EnumTitleAction.SUBTITLE, cbc2);
 		((CraftPlayer)p).getHandle().playerConnection.sendPacket(packet1);
 		((CraftPlayer)p).getHandle().playerConnection.sendPacket(packet2);
 		((CraftPlayer)p).getHandle().playerConnection.sendPacket(packet3);

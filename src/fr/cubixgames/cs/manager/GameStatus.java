@@ -1,6 +1,7 @@
 package fr.cubixgames.cs.manager;
 
 import fr.cubixgames.cs.ColorSheep;
+import fr.cubixgames.cs.command.CommandManager;
 import fr.cubixgames.cs.listener.ListenerManager;
 import fr.cubixgames.cs.manager.helper.InterfaceGameStatus;
 
@@ -16,6 +17,7 @@ public class GameStatus implements InterfaceGameStatus {
 	@Override
 	public void lobby() {
 		new ListenerManager(ColorSheep.getInstance()).register();
+		new CommandManager(ColorSheep.getInstance()).register();
 		gs = GameState.LOBBY;
 		gm.setGameName("§bColor§6Sheep §7 > §f");
 		gm.setMaxPlayer(8);

@@ -7,8 +7,8 @@ import fr.cubixgames.cs.manager.helper.InterfaceTask;
 import fr.cubixgames.cs.player.ColorPlayer;
 
 public class LobbyTimer implements InterfaceTask {
-
-	private ColorSheep instance;
+	
+	private ColorSheep instance = ColorSheep.getInstance();
 	
 	private int timer;
 	private int task;
@@ -19,7 +19,7 @@ public class LobbyTimer implements InterfaceTask {
 			@Override
 			public void run() {
 				if(timer <= 0) {
-					
+					stop();
 				}else{
 					for(ColorPlayer cps : instance.getPlayerManager().getPlayers()) {
 						cps.getPlayer().setLevel(getTimer());
