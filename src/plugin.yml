@@ -1,0 +1,6 @@
+main: fr.cubixgames.cs.ColorSheep
+name: ColorSheep
+version: 0.1
+author: CubixGames
+commands:
+    game:
