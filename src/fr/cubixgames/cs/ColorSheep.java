@@ -1,5 +1,7 @@
 package fr.cubixgames.cs;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.cubixgames.cs.manager.GameManager;
@@ -32,6 +34,11 @@ public class ColorSheep extends JavaPlugin {
 		cs.sendMessage("Version:"+this.getDescription().getVersion());
 		cs.sendMessage("----------------------");
 		gs.lobby();
+		
+		for(Player pls : Bukkit.getOnlinePlayers()) {
+			pm.addPlayer(pls.getUniqueId());
+		}
+		
 	}
 	
 	public static ColorSheep getInstance() {

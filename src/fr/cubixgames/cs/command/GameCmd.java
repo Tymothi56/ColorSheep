@@ -10,8 +10,6 @@ import fr.cubixgames.cs.manager.GameCommand;
 import fr.cubixgames.cs.manager.utils.SoundUtils;
 import fr.cubixgames.cs.player.ColorPlayer;
 import fr.cubixgames.cs.state.lobby.LobbyTimer;
-import fr.cubixgames.cubixapi.api.bdd.PlayerInfo;
-import fr.cubixgames.cubixapi.api.bdd.RankList;
 
 public class GameCmd extends GameCommand implements CommandExecutor {
 
@@ -33,8 +31,17 @@ public class GameCmd extends GameCommand implements CommandExecutor {
 				cp.sendMessage("§cUsage: /game <start>");
 			}else{
 				if(args[0].equalsIgnoreCase("start")) {
-					lt.setTimer(10);
-					lt.start();
+					if(new LobbyTimer().isRun()) {
+						lt.setTimer(10);
+					}else{
+						lt.setTimer(10);
+						lt.start();
+					}
+					
+					for(ColorPlayer cps : super.getPlayerManager().getPlayers()) {
+						cps.sendSound(SoundUtils.FORCE_START);
+					}
+					
 				}else{
 					cp.sendSound(SoundUtils.ERROR);
 					cp.sendMessage("§cUsage: /game <start>");
