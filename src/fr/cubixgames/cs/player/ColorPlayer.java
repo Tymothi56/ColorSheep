@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import fr.cubixgames.cs.ColorSheep;
+import fr.cubixgames.cs.manager.GameInventory;
 import fr.cubixgames.cs.manager.utils.SoundUtils;
 import fr.cubixgames.cs.manager.utils.TitleUtils;
 
@@ -30,6 +31,10 @@ public class ColorPlayer {
 	
 	public Player getPlayer() {
 		return Bukkit.getPlayer(uuid);
+	}
+	
+	public void openInventory(GameInventory inv) {
+		Bukkit.getPlayer(uuid).openInventory(inv.craftInventory());
 	}
 	
 	public void sendActionBar(String msg) {

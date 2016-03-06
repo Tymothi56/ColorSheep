@@ -23,6 +23,7 @@ public class LobbyTimer implements InterfaceTask {
 			public void run() {
 				if(timer <= 0) {
 					run = false;
+					instance.getGameStatus().game();
 					stop();
 				}else{
 					for(ColorPlayer cps : instance.getPlayerManager().getPlayers()) {
